@@ -1,4 +1,4 @@
-# Tarea 1: SASS Grid System
+# SASS Grid System
 By: Nataly Salazar
 
 This repo has the implementation of a responsive grid system in HTML using CSS and SASS. It is the first homework from the Desktop Application Programming class.
