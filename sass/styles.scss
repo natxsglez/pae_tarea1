@@ -1,0 +1,84 @@
+@import 'variables';
+@import 'mixins';
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.grid>div {
+    padding: 10px 20px;
+    box-sizing: border-box;
+    float: left;
+    border: solid 1px $grid-border-color;
+    background-color: $grid-bg-color;
+}
+
+.grid::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+//THIS PROPERTIES MUST PERSIST FOR EVERY COLUMN
+div[class*=col-] {
+    text-align: center;
+}
+
+//THIS MUST PERSIST NO MATTER THE SIZE OF THE SCREEN
+.col-md-1{
+    @include col-complete;
+}
+
+//RESPONSIVENESS
+@media only screen and (max-width: 519px){
+    div[class*=col-]{
+        @include col-complete;
+    }
+}
+
+@media only screen and (min-width: 520px) {
+    .col-md-2,
+    .col-md-4 {
+        @include col-half;
+    }
+
+    .col-md-3,
+    .col-md-6 {
+        @include col-third;
+    }
+
+    .col-md-8 {
+        @include col-quarter;
+    }
+
+    .col-md-12 {
+        @include col-sixth;
+    }
+}
+
+@media only screen and (min-width: 1250px) {
+    .col-md-2 {
+        @include col-half;
+    }
+
+    .col-md-3 {
+        @include col-third;
+    }
+
+    .col-md-4 {
+        @include col-quarter;
+    }
+
+    .col-md-6 {
+        @include col-sixth;
+    }
+
+    .col-md-8 {
+        @include col-eight();
+    }
+
+    .col-md-12 {
+        @include col-twelfth();
+    }
+}

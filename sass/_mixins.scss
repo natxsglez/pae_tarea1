@@ -1,0 +1,27 @@
+@mixin col-complete {
+    width: 100%;
+}
+
+@mixin col-half{
+    width: 50%;
+}
+
+@mixin col-third{
+    width: 33.33333%;
+}
+
+@mixin col-quarter{
+    width: 25%;
+}
+
+@mixin col-sixth{
+    width: 16.66666%;
+}
+
+@mixin col-eight{
+    width: 12.5%;
+}
+
+@mixin col-twelfth{
+    width: 8.33333%;
+}
